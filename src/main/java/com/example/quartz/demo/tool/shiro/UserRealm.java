@@ -1,7 +1,7 @@
 package com.example.quartz.demo.tool.shiro;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.example.quartz.demo.mapper.MenuMapper;
+//import com.example.quartz.demo.mapper.MenuMapper;
 //import com.example.quartz.demo.mapper.UserMapper;
 import com.example.quartz.demo.pojo.Menu;
 import com.example.quartz.demo.pojo.User;
@@ -35,8 +35,8 @@ public class UserRealm extends AuthorizingRealm {
 //    @Autowired
 //    private UserMapper userMapper;
 
-    @Autowired
-    private MenuMapper menuMapper;
+//    @Autowired
+//    private MenuMapper menuMapper;
 
 
 
@@ -53,11 +53,11 @@ public class UserRealm extends AuthorizingRealm {
         List<String> permLists;
         if(userId == Constant.SUPER_ADMIN) {
             //超级管理员，拥有所有权限
-            List<Menu> menuLists = menuMapper.selectList(null); //菜单列表
-            permLists = new ArrayList<>(menuLists.size());
-            for (Menu menu:menuLists) {
-                permLists.add(menu.getPerms());  //获取每一个菜单对应的权限字符长串， 并加入到用户的权限列表中去
-            }
+            //List<Menu> menuLists = menuMapper.selectList(null); //菜单列表
+//            permLists = new ArrayList<>(menuLists.size());
+//            for (Menu menu:menuLists) {
+//                permLists.add(menu.getPerms());  //获取每一个菜单对应的权限字符长串， 并加入到用户的权限列表中去
+//            }
 
         }else{
             //普通用户，查找权限
@@ -65,6 +65,7 @@ public class UserRealm extends AuthorizingRealm {
             permLists=null;
 
         }
+        permLists = null;
 
         //去重，拼权限字符串
         HashSet<String> permSet = new HashSet<>();

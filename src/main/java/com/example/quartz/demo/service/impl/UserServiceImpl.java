@@ -1,6 +1,6 @@
 package com.example.quartz.demo.service.impl;
 
-import com.example.quartz.demo.mapper.MenuMapper;
+//import com.example.quartz.demo.mapper.MenuMapper;
 //import com.example.quartz.demo.mapper.UserMapper;
 import com.example.quartz.demo.pojo.Menu;
 import com.example.quartz.demo.service.UserService;
@@ -15,8 +15,8 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 //    @Autowired
 //    private UserMapper userMapper;
-    @Autowired
-    private MenuMapper menuMapper;
+//    @Autowired
+//    private MenuMapper menuMapper;
 
     @Override
     public List<Menu> queryMenuListByUserId(Long userId) {
@@ -73,6 +73,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<Menu> queryListByParentId(Long parentId) {
-        return menuMapper.queryListByParentId(parentId);
+//        return menuMapper.queryListByParentId(parentId);
+        return null;
     }
 }
