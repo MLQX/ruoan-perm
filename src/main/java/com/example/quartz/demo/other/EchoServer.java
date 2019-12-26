@@ -2,6 +2,7 @@ package com.example.quartz.demo.other;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoop;
@@ -44,6 +45,7 @@ public class EchoServer {
                 });
         try {
             ChannelFuture f = bootstrap.bind().sync();
+//            ChannelHandler
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             group.shutdownGracefully().sync();

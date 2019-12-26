@@ -8,11 +8,17 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
 
+import java.nio.charset.Charset;
+
 @ChannelHandler.Sharable
 public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf) throws Exception {
         System.out.println("Client receive:"+byteBuf.toString(CharsetUtil.UTF_8));
+        //ByteBuf.class;
+        //ByteBuf buf = Unpooled.copiedBuffer("gg", Charset.defaultCharset());
+
+
     }
 
     @Override
